@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class QuadraticEquation {
+
+	public static void main(String[] args) {
+		// ax2 + bx + c = 0 a!=0
+		// D = b2 -4ac
+		// if x1 == x2 <==> D != 0 x = −b ± sqrt(D) / 2*a
+		// if x1 == x2 <==> D==0 -> x1==x2 = -b/2a
+
+		double a, b, c, d, x1, x2; // d -> дискриминанта.
+		Scanner in = new Scanner(System.in);
+		System.out.println("Ваведете а = ? ");
+		a = in.nextDouble();
+		System.out.println("Ваведете b = ? ");
+		b = in.nextDouble();
+		System.out.println("Ваведете c = ? ");
+		c = in.nextDouble();
+		if (a == 0) {
+			System.out.println("a = 0 <==> Уравнението е линейно!");
+			x2 = -c / b;
+			System.out.println("Корен на уравнението e :");
+			System.out.println("x1 = " + x2);
+		} else {
+			d = (b * b) - (4 * a * c); // Намираме дискриминантата
+			System.out.println("D = " + d);
+			if (d < 0) {
+				System.out
+						.println("D < 0 <==> Уравнението няма реални корени!");
+			} else if (d == 0) { // x1 == x2
+				x1 = x2 = -b / (2 * a);
+				System.out.println("Корените на уравнението са :");
+				System.out.println("x1 = " + x1 + ", x2 = " + x2);
+			} else { // x1 != x2
+
+				x1 = (-b + Math.sqrt(d)) / (2 * a);
+
+				x2 = (-b - Math.sqrt(d)) / (2 * a);
+				System.out.println("Корените на уравнението са :");
+				System.out.println("x1 = " + x1 + ", x2 = " + x2);
+			}
+		}
+	}
+}
