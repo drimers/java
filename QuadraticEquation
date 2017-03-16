@@ -25,8 +25,7 @@ public class QuadraticEquation {
 			d = (b * b) - (4 * a * c); // Намираме дискриминантата
 			System.out.println("D = " + d);
 			if (d < 0) {
-				System.out
-						.println("D < 0 <==> Уравнението няма реални корени!");
+				System.out.println("D < 0 <==> Уравнението няма реални корени!");
 			} else if (d == 0) { // x1 == x2
 				x1 = x2 = -b / (2 * a);
 				System.out.println("Корените на уравнението са :");
